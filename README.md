@@ -26,6 +26,7 @@
 - **[Redis](https://redis.io/):** Опционально для кэширования.
 - **[Ruff](https://docs.astral.sh/ruff/):** Линтер/Форматтер с настройками в pyproject.toml
 - **[Black](https://black.readthedocs.io/en/stable/getting_started.html):** Форматтер с настройками в pyproject.toml
+- **[SqlAdmin](https://github.com/aminalaee/sqladmin):** В качестве админки
 - Всё что нужно для работы с PostgreSQL, и aiosqlite (sync/async).
 - Библиотеки для тестирования: pyTest, httpx.
 - Подробнее в pyproject.toml
