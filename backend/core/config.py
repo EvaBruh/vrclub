@@ -5,7 +5,7 @@ from pathlib import Path
 from pydantic import EmailStr, AnyHttpUrl, field_validator, Field
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
-BASE_DIR = Path(__file__).parent.parent
+PROJECT_DIR = Path(__file__).parent.parent.parent  # Корень проекта
 
 
 class ModeEnum(str, Enum):
@@ -15,7 +15,7 @@ class ModeEnum(str, Enum):
 
 
 class Settings(BaseSettings):
-    model_config = SettingsConfigDict(env_file="../.env", env_file_encoding="utf-8")
+    model_config = SettingsConfigDict(env_file=PROJECT_DIR / ".env", env_file_encoding="utf-8")
     MODE: ModeEnum
     PROJECT_NAME: str
     # База данных

@@ -1,11 +1,8 @@
 from datetime import datetime, UTC
 from sqlalchemy import Column, Integer, String, DateTime, Boolean, ForeignKey, Text, Table
 from sqlalchemy.ext.associationproxy import AssociationProxy, association_proxy
-from sqlalchemy.orm import DeclarativeBase, relationship, Mapped, mapped_column
-
-
-class Base(DeclarativeBase):
-    pass
+from sqlalchemy.orm import relationship, Mapped, mapped_column
+from .base import Base
 
 
 # Таблица ассоциации
@@ -45,6 +42,7 @@ class User(Base):
     name: Mapped[str | None] = mapped_column(String(255))
     last_name: Mapped[str | None] = mapped_column(String(255))
     phone_number: Mapped[str | None] = mapped_column(String(80))
+    address: Mapped[str | None] = mapped_column(String(255))
     two_number: Mapped[str | None] = mapped_column(String(80))
     is_active: Mapped[bool] = mapped_column(default=True)
     is_superuser: Mapped[bool] = mapped_column(default=False)
